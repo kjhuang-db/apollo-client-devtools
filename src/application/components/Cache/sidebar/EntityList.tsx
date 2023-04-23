@@ -17,6 +17,19 @@ const listStyles = css`
   }
 `;
 
+const redashStyles = css`
+  background-color: #FF5224;
+  padding: 2px;
+  display: inline-block;
+  margin-right: 2px;
+  border-radius: 2px
+`
+
+function RedashItem({listCacheId}) {
+  const [typeName, id ] = listCacheId.split(':');
+  return <><span css={redashStyles}>{typeName}</span>{id}</>
+}
+
 export function EntityList({ data, cacheId, setCacheId, searchResults = {} }) {
   const theme = useTheme();
   const ids = getRootCacheIds(data);
@@ -35,7 +48,9 @@ export function EntityList({ data, cacheId, setCacheId, searchResults = {} }) {
             selected={listCacheId === cacheId}
             highlighted={idHits.includes(listCacheId)}
           >
-            {listCacheId}
+            {
+              listCacheId.toLowerCase().includes('redash') ? <RedashItem listCacheId={listCacheId} /> : listCacheId
+            }
           </ListItem>
         );
       })}

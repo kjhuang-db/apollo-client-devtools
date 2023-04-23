@@ -55,7 +55,7 @@ devtools.listen(CREATE_DEVTOOLS_PANEL, async ({ payload }) => {
   }
 
   const panel = await browser.devtools.panels.create(
-    "Apollo",
+    "RedashV2 Apollo",
     "logo_devtools.png",
     "panel.html",
   );

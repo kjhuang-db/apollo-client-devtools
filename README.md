@@ -1,5 +1,20 @@
 <a href="https://www.apollographql.com/"><img src="https://user-images.githubusercontent.com/841294/53402609-b97a2180-39ba-11e9-8100-812bab86357c.png" height="100" alt="Apollo Client"></a>
 
+# Multi-Client Version Playground Shortcut
+
+Due to the issue https://github.com/apollographql/apollo-client-devtools/issues/822, Apollo Dev Tool v4 does not work well with multiple apollo clients (we have two...orz).
+
+In local dev mode, find the related client(e.g. `new ApolloClient`). For the one you are developing with (e.g. under `edge/xxx/graphql`), pass `connectToDevTools: true`, also make the other one `false`. This will ensure only one global variable for `window.__APOLLO_CLIENT__`, and make your graphql dev experience great again!
+
+If you wanna try to play around with the devtool with customization, just do
+
+1. Clone this repo and run `bash cd apollo-client-devtools npm install`
+1. run `bash npm run chrome`
+1. In your Chrome URL bar, go to: `chrome://extensions/`
+1. Click on `Load unpacked`.
+1. Add the `apollo-client-devtools/build` directory.
+1. The add-on should now be installed.
+
 # Apollo Client Browser Devtools
 
 [![Build Status](https://circleci.com/gh/apollographql/apollo-client-devtools.svg?style=svg)](https://circleci.com/gh/apollographql/apollo-client-devtools)
@@ -22,14 +37,14 @@ The Apollo Client Browser Devtools appear as an "Apollo" tab in your web browser
 
 ## Maintainers
 
-|Name|Username|
-|---|---|
-|Ben Newman|[@benjamn](https://github.com/benjamn)|
-|Alessia Bellisario|[@alessbell](https://github.com/alessbell)|
-|Jeff Auriemma|[@bignimbus](https://github.com/bignimbus)|
-|Hugh Willson|[@hwillson](https://github.com/hwillson)|
-|Jerel Miller|[@jerelmiller](https://github.com/jerelmiller)|
-|Lenz Weber-Tronic|[@phryneas](https://github.com/phryneas)|
+| Name               | Username                                       |
+| ------------------ | ---------------------------------------------- |
+| Ben Newman         | [@benjamn](https://github.com/benjamn)         |
+| Alessia Bellisario | [@alessbell](https://github.com/alessbell)     |
+| Jeff Auriemma      | [@bignimbus](https://github.com/bignimbus)     |
+| Hugh Willson       | [@hwillson](https://github.com/hwillson)       |
+| Jerel Miller       | [@jerelmiller](https://github.com/jerelmiller) |
+| Lenz Weber-Tronic  | [@phryneas](https://github.com/phryneas)       |
 
 ## Apollo Client version support
 
