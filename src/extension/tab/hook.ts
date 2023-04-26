@@ -218,8 +218,9 @@ function initializeHook() {
     let interval;
     let count = 0;
 
+    // increase timeout when running a testxxxx
     function initializeDevtoolsHook() {
-      if (count++ > 10) clearInterval(interval);
+      if (count++ > 30) clearInterval(interval);
       if (window.__APOLLO_CLIENT__) {
         hook.ApolloClient = window.__APOLLO_CLIENT__;
         hook.ApolloClient.__actionHookForDevTools(handleActionHookForDevtools);
